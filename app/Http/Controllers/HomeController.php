@@ -10,31 +10,49 @@ class HomeController extends Controller
 {
     public $i, $result, $products, $mobile, $fridges, $tvs, $categories ;
 
-  public function index(){
-      return view('home');
+    public function __construct()
+    {
+        $this->categories = CategoriesModel::getAllCategories();
+    }
+
+    public function index(){
+      return view('home', [
+          'categories' => $this->categories,
+      ]);
   }
   public function contact(){
-      return view('contact');
+      return view('contact', [
+          'categories' => $this->categories
+      ]);
   }
-  public function category(){
-      $this->categories = CategoriesModel::getAllCategories();
-      return view('category', ['categories' => $this->categories]);
+  public function category($id){
+      $this->products = ProductModel::getAllProductByCategory($id);
+      return view('category', [
+          'categories' => $this->categories,
+          'products'    => $this->products
+      ]);
   }
 
   public function detail($id){
       $this->products = ProductModel:: getProductById($id);
-      return view('detail', ['product' => $this->products ]);
+      return view('detail', [
+          'product' => $this->products,
+          'categories' => $this->categories
+      ]);
   }
 
   //===================Product ===========================
   public function products(){
+      $this->categories = CategoriesModel::getAllCategories();
+
       $this->mobile =ProductModel::getAllProductByCategory(1);
       $this->fridges =ProductModel::getAllProductByCategory(3);
       $this->tvs =ProductModel::getAllProductByCategory(2);
       return view('products', [
           'mobile' =>$this->mobile,
           'fridges' =>$this->fridges,
-          'tvs' =>$this->tvs
+          'tvs' =>$this->tvs,
+          'categories' => $this->categories
       ]);
   }
   //=======================End Product==============================================

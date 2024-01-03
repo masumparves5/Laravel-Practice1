@@ -18,7 +18,7 @@ Route::get('/', [HomeController::class, 'index']) ->name('home');
 Route::get('/contact', [HomeController::class, 'contact']) ->name('contact');
 Route::get("/products", [HomeController::class, 'products']) ->name('products');
 Route::get("/detail/{id}", [HomeController::class, 'detail']) ->name('detail');
-Route::get("/categories", [HomeController::class, 'category']) ->name('categories');
+Route::get("/categories/{id}", [HomeController::class, 'category']) ->name('categories');
 Route::post('/makeOddEven', [HomeController::class, 'makeOddEven']) ->name('makeOddEven');
 
 

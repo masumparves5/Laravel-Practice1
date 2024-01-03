@@ -1,3 +1,4 @@
+<?php //dd($categories); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,14 +16,16 @@
         <ul class="navbar-nav">
             <li><a href="{{route('home')}}" class="nav-link">Home</a></li>
             <li><a href="{{route('products')}}" class="nav-link">Product</a></li>
-{{--            <li class="dropdown">--}}
-{{--                <a href="" class="nav-link dropdown dropdown-toggle" data-bs-toggle="dropdown">Categories</a>--}}
-{{--                <ul class="dropdown-menu dropdown-menu-dark">--}}
-{{--                    @foreach($categories as $category)--}}
-{{--                        <li><a href="ref="{{ route('category.show', ['id' => $category['id']]) }}" class="dropdown-item">{{$category['name']}}</a></li>--}}
-{{--                    @endforeach--}}
-{{--                </ul>--}}
-{{--            </li>--}}
+            <li class="dropdown">
+                <a href="" class="nav-link dropdown dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    @foreach($categories as $category)
+                        <li>
+                            <a href="{{route('categories', ['id' =>$category['id']])}}" class="dropdown-item"> {{$category['name']}}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </li>
             <li><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
         </ul>
     </div>

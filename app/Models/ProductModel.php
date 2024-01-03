@@ -102,7 +102,7 @@ class ProductModel extends Model
         6 => [
             "id" => 7,
             "category_id" => 2,
-            "name" => "Sony",
+            "name" => "samsung",
             "price" => 76000,
             "NETWORK" => "LTE",
             "BATTERY" => "Li-Ion 3400 mAh, non-removable",
@@ -117,7 +117,7 @@ class ProductModel extends Model
         7 => [
             "id" => 8,
             "category_id" => 3,
-            "name" => "Sony",
+            "name" => "Samsung",
             "price" => 35000,
             "NETWORK" => "LTE",
             "BATTERY" => "Li-Ion 3400 mAh, non-removable",
@@ -147,7 +147,7 @@ class ProductModel extends Model
         9 => [
             "id" => 10,
             "category_id" => 3,
-            "name" => "Sony",
+            "name" => "Walton",
             "price" => 76550,
             "NETWORK" => "LTE",
             "BATTERY" => "Li-Ion 3400 mAh, non-removable",
@@ -162,7 +162,7 @@ class ProductModel extends Model
         10 => [
             "id" => 11,
             "category_id" => 3,
-            "name" => "Sony",
+            "name" => "Phalips",
             "price" => 120000,
             "NETWORK" => "LTE",
             "BATTERY" => "Li-Ion 3400 mAh, non-removable",
