@@ -41,7 +41,7 @@ class HomeController extends Controller
       ]);
   }
 
-  //===================Product ===========================
+  //===================Product ================pppp===========
   public function products(){
       $this->categories = CategoriesModel::getAllCategories();
 
