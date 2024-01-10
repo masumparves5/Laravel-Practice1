@@ -27,6 +27,7 @@
                 </ul>
             </li>
             <li><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
+            <li><a href="{{route('blog.add')}}" class="nav-link">Add Blog</a></li>
         </ul>
     </div>
 </nav>

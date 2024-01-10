@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +19,12 @@ Route::get('/contact', [HomeController::class, 'contact']) ->name('contact');
 Route::get("/products", [HomeController::class, 'products']) ->name('products');
 Route::get("/detail/{id}", [HomeController::class, 'detail']) ->name('detail');
 Route::get("/categories/{id}", [HomeController::class, 'category']) ->name('categories');
-Route::post('/makeOddEven', [HomeController::class, 'makeOddEven']) ->name('makeOddEven');
+Route::post('/makeOddEven', [HomeController::class, 'makeOddEven']) ->name('makeOddEven') ;
+
+Route::get('/add-blog', [BlogController::class, 'index']) ->name('blog.add');
+Route::post('/new-blog', [BlogController::class, 'saveBlog']) ->name('blog.new');
+
+
 
 
 
