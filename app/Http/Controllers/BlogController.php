@@ -14,14 +14,25 @@ class BlogController extends Controller
         $this->categories = CategoriesModel::getAllCategories();
     }
 
-    public function index(){
+    public function index()                         // For View File
+    {
         return view('blog.add', [
             'categories' => $this->categories,
         ]);
     }
-    public function saveBlog(Request $request)
+
+    public function saveBlog(Request $request)      // Gate data from form.
     {
         Blog::createBlog($request);
-        return redirect(route('blog.add'));
+        return redirect(route('blog.manage'));
     }
+
+    public function manageBlog()                    // Send Data to View file.
+    {
+        return view('blog.manage', [
+            'categories' => $this->categories,
+            'blogs'     => Blog::all()
+        ]);
+    }
+
 }

@@ -21,8 +21,9 @@ Route::get("/detail/{id}", [HomeController::class, 'detail']) ->name('detail');
 Route::get("/categories/{id}", [HomeController::class, 'category']) ->name('categories');
 Route::post('/makeOddEven', [HomeController::class, 'makeOddEven']) ->name('makeOddEven') ;
 
-Route::get('/add-blog', [BlogController::class, 'index']) ->name('blog.add');
-Route::post('/new-blog', [BlogController::class, 'saveBlog']) ->name('blog.new');
+Route::get('/add-blog', [BlogController::class, 'index']) ->name('blog.add');               // for view file
+Route::get('/manage-blog', [BlogController::class, 'manageBlog']) ->name('blog.manage');    // send data to view file
+Route::post('/new-blog', [BlogController::class, 'saveBlog']) ->name('blog.new');           // get data from view file
 
 
 
